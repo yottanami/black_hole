@@ -4,6 +4,12 @@ from pardakht import handler
 
 
 def index(request):
+    return render(request, 'credit/index.html')
+
+def ret():
+    return HttpResponse('Res')
+
+def buy(request):
     result = handler.create_payment(
         20000,
         'description',
@@ -12,6 +18,3 @@ def index(request):
         False
     )
     return HttpResponse(result['link'])
-
-def ret():
-    return HttpResponse('Res')
